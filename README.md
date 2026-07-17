@@ -44,6 +44,15 @@ mvn exec:java -Dexec.mainClass=sample.apachepoi.TemplateGenerator -Dexec.args="p
 mvn exec:java -Dexec.mainClass=sample.apachepoi.LargeDataExporter -Dexec.args="path/to/template.xlsx path/to/output.xlsx"
 ```
 
+### Windows PowerShell の場合
+
+PowerShell は `-Dexec.mainClass=...` の `.` 以降を別引数として分割してしまうため、`-D` オプション全体をダブルクォートで囲んでください。
+
+```powershell
+mvn exec:java "-Dexec.mainClass=sample.apachepoi.TemplateGenerator"
+mvn exec:java "-Dexec.mainClass=sample.apachepoi.LargeDataExporter"
+```
+
 ## 実装のポイント
 
 - `SXSSFWorkbook(XSSFWorkbook, rowAccessWindowSize)` コンストラクタで、既存テンプレートを読み込みつつ以降の行だけをストリーミングで書き出しています

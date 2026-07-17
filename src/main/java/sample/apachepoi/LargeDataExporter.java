@@ -17,8 +17,8 @@ import java.nio.file.Path;
 public class LargeDataExporter {
 
     // メモリ上に保持する行数。これを超えた分は順次ディスクへフラッシュされる。
-    private static final int ROW_ACCESS_WINDOW_SIZE = 1000;
-    private static final int DATA_ROW_COUNT = 100_000;
+    private static final int ROW_ACCESS_WINDOW_SIZE = 100;
+    private static final int DATA_ROW_COUNT = 1000000;
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
         Path templatePath = Path.of(args.length > 0 ? args[0] : "template.xlsx");
