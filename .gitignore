@@ -1,0 +1,7 @@
+target/
+*.xlsx
+
+# エディタ / ツールのローカル状態
+.metals/
+.bloop/
+.vscode/
